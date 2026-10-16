@@ -1,17 +1,21 @@
-import './App.css'
-import Greentings from './components/Greentings'
 import { Header } from './components/Header'
+import './App.css'
 
-const user = window.prompt("Qual o seu nome?") || "Visitante";
 
 function App() {
 
   return (
     <>
-      <Header/>
-      <Greentings nome={user}/>      
+      <Header
+        brand="Geração Tech"
+        description="Sede Bezerra"
+      >
+        <a href="#equipe">Equipe</a>
+        <a href="#aprendizado">Aprendizado</a>
+      </Header>
+      
     </>
   )
 }
 
-export default App
+export default App;
