@@ -1,20 +1,28 @@
+import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
 import { Header } from './components/Header'
+import Contact from './pages/Contact';
+import Home from './pages/Home';
 import './App.css'
 
 
 function App() {
-
   return (
-    <>
+    <BrowserRouter>
       <Header
-        brand="Geração Tech"
+        brand="Geração Tech" 
         description="Sede Bezerra"
       >
-        <a href="#equipe">Equipe</a>
-        <a href="#aprendizado">Aprendizado</a>
+        <a href="/#equipe">Equipe</a>
+        <NavLink to="/Contato">Contato</NavLink>
       </Header>
-      
-    </>
+      <main className='container'>
+        <Routes>
+          <Route path='/' element={<Home/>}/>
+          <Route path='*' element={<Home/>}/>
+          <Route path='/contato' element={<Contact/>}/>
+        </Routes>
+      </main>
+    </BrowserRouter>
   )
 }
 
